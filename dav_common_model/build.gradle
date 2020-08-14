@@ -1,0 +1,71 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion rootProject.ext.android.compileSdkVersion
+    buildToolsVersion rootProject.ext.android.buildToolsVersion
+
+    defaultConfig {
+        minSdkVersion rootProject.ext.android.minSdkVersion
+        targetSdkVersion rootProject.ext.android.targetSdkVersion
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    lintOptions {
+        abortOnError false
+    }
+    sourceSets {
+        main {
+            res {
+                srcDirs 'src/main/res', 'src/main/res/drawable'
+            }
+        }
+    }
+    buildTypes.each {
+        it.buildConfigField 'String', 'API_JSON', "\"https://gitee.com/mabinbin/davApi/raw/master/host.json\""
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+    api rootProject.ext.dependencies.appcompat
+    api rootProject.ext.dependencies.design
+    api rootProject.ext.dependencies.recyclerview
+    api rootProject.ext.dependencies.constraintLayout
+
+    api rootProject.ext.dependencies.rxAndroid
+    api rootProject.ext.dependencies.rxjava
+
+    api rootProject.ext.dependencies.retrofit
+    api rootProject.ext.dependencies.adapterRxjava2
+    api rootProject.ext.dependencies.converterScalars
+    api rootProject.ext.dependencies.converterGson
+    api (rootProject.ext.dependencies.converterSimplexml) {
+        exclude group: 'xpp3', module: 'xpp3'
+        exclude group: 'stax', module: 'stax-api'
+        exclude group: 'stax', module: 'stax'
+    }
+    api rootProject.ext.dependencies.glide
+    api rootProject.ext.dependencies.logger
+    api rootProject.ext.dependencies.gson
+    api rootProject.ext.dependencies.okhttp3
+    api rootProject.ext.dependencies.okhttp3Logging
+
+    api rootProject.ext.dependencies.xUtil
+
+    api project(path: ':framework_lib')
+    api project(path: ':router_lib')
+    api project(':dkplayer-java')
+    api project(':dkplayer-ui')
+    api project(':promptlibrary')
+    api project(path: ':dkplayer-players:ijk')
+
+}

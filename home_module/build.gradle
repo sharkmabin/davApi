@@ -1,0 +1,69 @@
+if (isModule.toBoolean()) {
+    apply plugin: 'com.android.application'
+} else {
+    apply plugin: 'com.android.library'
+}
+
+android {
+    compileSdkVersion rootProject.ext.android.compileSdkVersion
+    buildToolsVersion rootProject.ext.android.buildToolsVersion
+
+    defaultConfig {
+        minSdkVersion rootProject.ext.android.minSdkVersion
+        targetSdkVersion rootProject.ext.android.targetSdkVersion
+
+        if (isModule.toBoolean()) {
+            applicationId "com.mabin.login"
+            versionCode rootProject.ext.android.versionCode
+            versionName rootProject.ext.android.versionName
+        } else {
+            println "home module ========================= " + project.getName()
+            javaCompileOptions {
+                annotationProcessorOptions {
+                    arguments = [ AROUTER_MODULE_NAME : project.getName() ]
+                }
+            }
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    sourceSets {
+        main {
+            res {
+                srcDirs 'src/main/res', 'src/main/res/menu'
+            }
+            if (isModule.toBoolean()) {
+                manifest.srcFile 'src/main/module/AndroidManifest.xml'
+                java {
+                    exclude 'src/main/java/debug/**'
+                }
+            } else {
+                manifest.srcFile 'src/main/AndroidManifest.xml'
+            }
+        }
+
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+    implementation project(path: ':dav_common_model')
+    if (!isModule.toBoolean()) {
+        annotationProcessor rootProject.ext.dependencies.arouterCompiler
+    }
+
+    annotationProcessor project(':processor_lib')
+    implementation project(':main_annotations')
+
+}

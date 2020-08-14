@@ -1,0 +1,61 @@
+ext {
+    android = [
+            compileSdkVersion   : 30,
+            buildToolsVersion   : '30.0.1',
+            applicationId       : 'com.mabin.dav.application',
+            minSdkVersion       : 16,
+            targetSdkVersion    : 30,
+            versionCode         : 1,
+            versionName         : '1.1.0',
+            defaultPublishConfig: 'release',
+            publishNonDefault   : true
+    ]
+
+    url = [
+            host: "https://gitee.com/mabinbin/davApi/raw/master/host.json"
+    ]
+
+    version = [
+            androidSupportSdkVersion: "28.0.0",
+            arouterApiVersion       : "1.5.0",
+            arouterCompilerVersion  : "1.2.2",
+            constraintLayoutVersion : "1.1.3",
+            multidex_version        : "1.0.3",
+            rxJavaVersion           : "2.2.19",
+            rxAndroidVersion        : "2.1.1",
+            retrofitVersion         : "2.9.0",
+            xUtilVersion            : "3.9.0",
+            glideVersion            : "3.7.0",
+            loggerVersion           : "2.2.0",
+            gsonVersion             : "2.8.6",
+            okhttp3Version          : "3.14.9",
+            okhttp3LogVersion       : "3.8.1"
+    ]
+
+    dependencies = [
+            appcompat         : "com.android.support:appcompat-v7:${version.androidSupportSdkVersion}",
+            design            : "com.android.support:design:${version.androidSupportSdkVersion}",
+            recyclerview      : "com.android.support:recyclerview-v7:${version.androidSupportSdkVersion}",
+            constraintLayout  : "com.android.support.constraint:constraint-layout:${version.constraintLayoutVersion}",
+            arouterApi        : "com.alibaba:arouter-api:${version.arouterApiVersion}",
+            arouterCompiler   : "com.alibaba:arouter-compiler:${version.arouterCompilerVersion}",
+            multidex          : "com.android.support:multidex:${version.multidex_version}",
+            rxAndroid         : "io.reactivex.rxjava2:rxandroid:${version.rxAndroidVersion}",
+            rxjava            : "io.reactivex.rxjava2:rxjava:${version.rxJavaVersion}",
+            retrofit          : "com.squareup.retrofit2:retrofit:${version.retrofitVersion}",
+            adapterRxjava2    : "com.squareup.retrofit2:adapter-rxjava2:${version.retrofitVersion}",
+            converterScalars  : "com.squareup.retrofit2:converter-scalars:${version.retrofitVersion}",
+            converterGson     : "com.squareup.retrofit2:converter-gson:${version.retrofitVersion}",
+            converterSimplexml: "com.squareup.retrofit2:converter-simplexml:${version.retrofitVersion}",
+            xUtil             : "org.xutils:xutils:${version.xUtilVersion}",
+            glide             : "com.github.bumptech.glide:glide:${version.glideVersion}",
+            glideCompile      : "com.github.bumptech.glide:compiler:${version.glideVersion}",
+            logger            : "com.orhanobut:logger:${version.loggerVersion}",
+            gson              : "com.google.code.gson:gson:${version.gsonVersion}",
+            okhttp3           : "com.squareup.okhttp3:okhttp:${version.okhttp3Version}",
+            okhttp3Logging    : "com.squareup.okhttp3:logging-interceptor:${version.okhttp3LogVersion}"
+
+    ]
+
+
+}

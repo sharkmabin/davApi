@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="GradleMigrationSettings" migrationVersion="1" />
+  <component name="GradleSettings">
+    <option name="linkedExternalProjectsSettings">
+      <GradleProjectSettings>
+        <option name="testRunner" value="PLATFORM" />
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="gradleHome" value="F:/Program Files/gradle-6.5.1-all/gradle-6.5.1" />
+        <option name="gradleJvm" value="1.8" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/dav_common_model" />
+            <option value="$PROJECT_DIR$/dkplayer-java" />
+            <option value="$PROJECT_DIR$/dkplayer-players" />
+            <option value="$PROJECT_DIR$/dkplayer-players/ijk" />
+            <option value="$PROJECT_DIR$/dkplayer-ui" />
+            <option value="$PROJECT_DIR$/dkplayer-videocache" />
+            <option value="$PROJECT_DIR$/framework_lib" />
+            <option value="$PROJECT_DIR$/home_module" />
+            <option value="$PROJECT_DIR$/main_annotations" />
+            <option value="$PROJECT_DIR$/main_module" />
+            <option value="$PROJECT_DIR$/movie_module" />
+            <option value="$PROJECT_DIR$/photo_module" />
+            <option value="$PROJECT_DIR$/processor_lib" />
+            <option value="$PROJECT_DIR$/promptlibrary" />
+            <option value="$PROJECT_DIR$/router_lib" />
+          </set>
+        </option>
+        <option name="resolveModulePerSourceSet" value="false" />
+      </GradleProjectSettings>
+    </option>
+  </component>
+</project>
